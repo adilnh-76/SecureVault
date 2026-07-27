@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}
+Decrypt File | SecureVault
+{% endblock %}
+
+{% block content %}
+
+<section class="form-section">
+
+    <div class="form-card">
+
+        <h1>🔓 Decrypt File</h1>
+
+        <p>
+            Upload an encrypted (.enc) file and enter the password used during encryption.
+        </p>
+
+        {% if error %}
+            <div class="error-message">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form action="/decrypt" method="POST" enctype="multipart/form-data">
+
+            <div class="form-group">
+
+                <label>Encrypted File</label>
+
+                <label for="decrypt-file-upload" class="upload-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <h3>Drag & Drop your encrypted file</h3>
+
+                    <p>or click to browse (.enc)</p>
+
+                    <span id="decrypt-file-name">
+                        No encrypted file selected
+                    </span>
+
+                </label>
+
+                <input
+                    type="file"
+                    id="decrypt-file-upload"
+                    name="enc_file"
+                    accept=".enc"
+                    hidden
+                    onchange="showDecryptFileName()"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Password</label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter a strong password"
+                        required>
+
+                    <span class="toggle-password" onclick="togglePassword()">
+
+                        👁
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                class="encrypt-btn"
+                type="submit">
+
+                Decrypt File
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

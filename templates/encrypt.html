@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}
+Encrypt File | SecureVault
+{% endblock %}
+
+{% block content %}
+
+<section class="form-section">
+
+    <div class="form-card">
+
+        <h1>🔒 Encrypt File</h1>
+
+        <p>
+            Upload a file and protect it using password-based encryption.
+        </p>
+
+        <form action="/encrypt" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+
+                <label>Select File</label>
+
+                <label for="file-upload" class="upload-box">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    <h3>Drag & Drop your file here</h3>
+
+                    <p>or click to browse</p>
+
+                    <span id="file-name">No file selected</span>
+
+                </label>
+
+                <input
+                    type="file"
+                    id="file-upload"
+                    name="file"
+                    hidden
+                    onchange="showFileName()"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Password</label>
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter a strong password"
+                                required>
+
+                            <span class="toggle-password" onclick="togglePassword()">
+
+                                👁
+
+                            </span>
+
+                        </div>
+            </div>
+
+            <!-- Password Strength -->
+
+            <div id="strength-text"></div>
+
+            <button class="encrypt-btn" type="submit">
+
+                Encrypt File
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/password.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home | SecureVault
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>🔐 SecureVault</h1>
+
+        <h2>A Secure File Encryption & Decryption Web Application</h2>
+
+        <p>
+            SecureVault protects your sensitive files using password-based
+            encryption. Encrypt your files securely and decrypt them anytime
+            using the correct password.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/encrypt" class="btn primary-btn">
+                Encrypt File
+            </a>
+
+            <a href="/decrypt" class="btn secondary-btn">
+                Decrypt File
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="feature-card">
+
+        <i class="fa-solid fa-lock"></i>
+
+        <h3>Secure Encryption</h3>
+
+        <p>
+            Encrypt files securely using password-based cryptography.
+        </p>
+
+    </div>
+
+    <div class="feature-card">
+
+        <i class="fa-solid fa-key"></i>
+
+        <h3>Strong Key Derivation</h3>
+
+        <p>
+            PBKDF2-HMAC-SHA256 with a random salt protects against brute-force attacks.
+        </p>
+
+    </div>
+
+    <div class="feature-card">
+
+        <i class="fa-solid fa-file-shield"></i>
+
+        <h3>Data Integrity</h3>
+
+        <p>
+            Authenticated encryption ensures files haven't been modified.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}
