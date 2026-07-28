@@ -141,18 +141,6 @@ Fernet Encryption
 Download .enc File
 ```
 
----
-
-## 🖼️ Screenshots
-
-> Add screenshots of:
->
-> - 🏠 Home Page
-> - 🔒 Encrypt Page
-> - 🔓 Decrypt Page
-
----
-
 ## 🎯 Future Improvements
 
 - Authentication & User Accounts
